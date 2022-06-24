@@ -51,6 +51,9 @@ function f = handle_collision(uav,uav_num,flag)
             dis2=(uav_x- uav(uav_num+i)*ones(1,uav_num)).^2 +(uav_y- uav(2*uav_num+i)*ones(1,uav_num)).^2+(uav_z- uav(3*uav_num+i)*ones(1,uav_num)).^2;
             [~,id]=sort(dis2,'ascend'); 
             uav(uav_num+i)=uav(uav_num+i)- improved_rate*rand()*uav(uav_num+id(2))-improved_rate*rand()*uav(uav_num+id(3))-improved_rate*rand()*uav(uav_num+id(4));
+            uav(uav_num*2+i)=uav(uav_num*2+i)- improved_rate*rand()*uav(uav_num*2+id(2))-improved_rate*rand()*uav(uav_num*2+id(3))-improved_rate*rand()*uav(uav_num*2+id(4));
+            uav(uav_num*3+i)=uav(uav_num*3+i)- improved_rate*rand()*uav(uav_num*3+id(2))-improved_rate*rand()*uav(uav_num*3+id(3))-improved_rate*rand()*uav(uav_num*3+id(4));
+       
         end
     end
     
